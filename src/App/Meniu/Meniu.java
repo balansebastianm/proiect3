@@ -1,4 +1,6 @@
-package Meniu;
+package App.Meniu;
+
+import App.Produse.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -10,7 +12,11 @@ public class Meniu extends JFrame {
     private JButton button2;
     private JButton button3;
     private JButton button4;
-    public Meniu(){
+
+    public void runMeniu(){
+        produseMagazin[] p = new produseMagazin[100];
+        adaugareInitiala a = new adaugareInitiala();
+        a.adaugareProduse(p);
         setContentPane(Meniu);
         setTitle("Meniu");
         setSize(450,300);
@@ -20,13 +26,16 @@ public class Meniu extends JFrame {
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("A");
+                cautareCod cd = new cautareCod();
+                cd.add(p);
+
             }
         });
         button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("B");
+                cautareNume cn = new cautareNume();
+                cn.add(p);
             }
         });
         button3.addActionListener(new ActionListener() {
