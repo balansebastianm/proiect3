@@ -1,0 +1,5 @@
+12,Smantana,lactate,5,100
+124,Iaurt,lactate,3,125
+5134,Salam,mezeluri,22,554
+2331,Slanina,mezeluri,13,22
+451,Capsuni,fructe,6,173
