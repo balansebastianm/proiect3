@@ -41,7 +41,8 @@ public class Meniu extends JFrame {
         button3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("C");
+                listareProduse l = new listareProduse();
+                l.listare(p);
             }
         });
         button4.addActionListener(new ActionListener() {
