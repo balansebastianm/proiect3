@@ -1,5 +1,6 @@
 package App.loginPackage;
 
+import App.Meniu.Meniu;
 import App.Produse.adaugareInitiala;
 
 import javax.swing.*;
@@ -79,10 +80,11 @@ public class login {
                                 "Login Successful", "Success",
                                 JOptionPane.INFORMATION_MESSAGE);
                         login = true;
-                        adaugareInitiala a = new adaugareInitiala();
-                        a.adaugareProduse();
-                        Meniu main = new Meniu;
-                        main.Meniu();
+
+                        frame.dispose();
+                        Meniu main = new Meniu();
+                        main.runMeniu();
+
                         break;
                     }
                 }
