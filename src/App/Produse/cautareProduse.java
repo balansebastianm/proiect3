@@ -7,7 +7,7 @@ public class cautareProduse extends adaugareInitiala{
 
     //cautare dupa nume
     public int cautareProduse(produseMagazin[] p, String name){
-        for(int i=1; i<=5; i++){
+        for(int i=1; i<=nrProduse; i++){
             if (Objects.equals(p[i].getNumeProdus(), name)) {
                 return i;
             }

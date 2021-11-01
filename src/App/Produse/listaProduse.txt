@@ -3,3 +3,7 @@
 5134,Salam,mezeluri,22,554
 2331,Slanina,mezeluri,13,22
 451,Capsuni,fructe,6,173
+555,Banane,fructe,8,232
+234,Mandarine,fructe,10,100
+199,Portocale,fructe,12,150
+202,CireseSpania,fructe,50,600

@@ -1,19 +1,13 @@
 package App.loginPackage;
 
 import App.Meniu.Meniu;
-import App.Produse.adaugareInitiala;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -60,7 +54,7 @@ public class login {
             public void actionPerformed(ActionEvent e) {
                 FileReader inputFile = null;
                 try {
-                    inputFile = new FileReader("C:\\Users\\Sebi\\IdeaProjects\\Proiect final\\src\\App\\loginPackage\\userdata.txt");
+                    inputFile = new FileReader("C:\\Users\\hades\\IdeaProjects\\proiect3s\\src\\App\\loginPackage\\userdata.txt");
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
