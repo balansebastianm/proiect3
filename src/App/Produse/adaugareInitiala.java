@@ -1,5 +1,7 @@
 package App.Produse;
 
+import App.Interfaces.IadaugareInitiala;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -8,7 +10,7 @@ import java.nio.file.Path;
 import java.util.Scanner;
 
 
-public class adaugareInitiala {
+public class adaugareInitiala implements IadaugareInitiala {
     long lines;
     private int i = 1;
     {

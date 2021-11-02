@@ -1,5 +1,6 @@
 package App.Produse;
 
+import App.Interfaces.IadaugareProdus;
 import jdk.dynalink.StandardOperation;
 
 import javax.swing.*;
@@ -11,7 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
-public class adaugareProdus {
+public class adaugareProdus implements IadaugareProdus {
 
     public void addProd(produseMagazin[] p){
         JFrame f = new JFrame();

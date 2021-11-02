@@ -1,11 +1,13 @@
 package App.Produse;
 
+import App.Interfaces.IafisareProdus;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class afisareProdus {
+public class afisareProdus implements IafisareProdus {
 
     public void show(produseMagazin[] p, int a){
         JFrame f = new JFrame();
