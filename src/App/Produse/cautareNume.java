@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class cautareNume extends adaugareInitiala{
+public class cautareNume {
     private JPanel panel1;
     private JLabel labelName, label;
     private JButton buttonAdd, buttonExit;
@@ -26,8 +26,6 @@ public class cautareNume extends adaugareInitiala{
         buttonExit.setText("Exit");
         panel1.add(buttonAdd);
         panel1.add(buttonExit);
-        for(int i=1; i<=numarProduse(); i++)
-            System.out.println(p[i].toString());
 
         buttonAdd.addActionListener(new ActionListener() {
             @Override
@@ -35,7 +33,6 @@ public class cautareNume extends adaugareInitiala{
 
                 cautareProduse c = new cautareProduse();
                 String nume = textName.getText();
-                System.out.println("\""+nume+"\"");
                 int a = c.cautareProduse(p, nume);
                 if(a == 0){
                     JOptionPane.showMessageDialog(null,

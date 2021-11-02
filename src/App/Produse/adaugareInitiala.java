@@ -13,7 +13,7 @@ public class adaugareInitiala {
     private int i = 1;
     {
         try {
-            lines = Files.lines(Path.of("C:\\Users\\hades\\IdeaProjects\\proiect3s\\src\\App\\Produse\\listaProduse.txt")).count();
+            lines = Files.lines(Path.of("C:\\Users\\Sebi\\IdeaProjects\\Proiect final\\src\\App\\Produse\\listaProduse.txt")).count();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -24,7 +24,7 @@ public class adaugareInitiala {
     {
         FileReader inputFile = null;
         try {
-            inputFile = new FileReader("C:\\Users\\hades\\IdeaProjects\\proiect3s\\src\\App\\Produse\\listaProduse.txt");
+            inputFile = new FileReader("C:\\Users\\Sebi\\IdeaProjects\\Proiect final\\src\\App\\Produse\\listaProduse.txt");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -49,7 +49,6 @@ public class adaugareInitiala {
             p[i].setCantitateProdus(cantitateProdus);
             i++;
         }
-        System.out.println(i);
     }
 
     public int numarProduse(){

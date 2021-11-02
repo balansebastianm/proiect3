@@ -1,6 +1,9 @@
 package App.Meniu;
 
 import App.Produse.*;
+import App.contUser.cosCumparaturi.adaugareCos;
+import App.contUser.cosCumparaturi.afisareCos;
+import App.contUser.cosCumparaturi.cos;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -12,14 +15,18 @@ public class Meniu extends JFrame {
     private JButton button2;
     private JButton button3;
     private JButton button4;
+    private JButton button5;
+    private JButton button6;
+
 
     public void runMeniu(){
         produseMagazin[] p = new produseMagazin[100];
         adaugareInitiala a = new adaugareInitiala();
+        cos[] c = new cos[100];
         a.adaugareProduse(p);
         setContentPane(Meniu);
         setTitle("Meniu");
-        setSize(450,300);
+        setSize(600,300);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
         setLocationRelativeTo(null);
@@ -48,10 +55,25 @@ public class Meniu extends JFrame {
         button4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("D");
+                adaugareProdus adp = new adaugareProdus();
+                adp.addProd(p);
+            }
+        });
+        button5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                adaugareCos ac = new adaugareCos(c, p);
+            }
+        });
+        button6.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                afisareCos ac = new afisareCos();
+                ac.afisare(c);
             }
         });
     }
+
 
     public static class mainClass {
         public static void main(String[] args) {

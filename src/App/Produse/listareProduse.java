@@ -8,14 +8,13 @@ public class listareProduse extends adaugareInitiala{
     private JPanel panel;
     private JTextArea textArea;
     private JButton button;
+    int nrProd = (int)lines;
 
     public void listare(produseMagazin[] p){
-        int nrProd = numarProduse();
-        String[] s = new String[nrProd+1];
+
         DefaultListModel<String> str = new DefaultListModel<>();
         JFrame f = new JFrame();
         panel = new JPanel();
-
 
         for(int i=1; i<=nrProd; i++)
         {
