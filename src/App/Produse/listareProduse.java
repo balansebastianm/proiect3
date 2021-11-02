@@ -1,25 +1,33 @@
 package App.Produse;
+import App.Threads.TlistareProduse;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Arrays;
+
+
 public class listareProduse extends adaugareInitiala{
     private JPanel panel;
     private JTextArea textArea;
     private JButton button;
     int nrProd = (int)lines;
 
-    public void listare(produseMagazin[] p){
+    public void listare(produseMagazin[] p) throws InterruptedException {
 
         DefaultListModel<String> str = new DefaultListModel<>();
         JFrame f = new JFrame();
         panel = new JPanel();
 
-        for(int i=1; i<=nrProd; i++)
+        Runnable r = new TlistareProduse(p, str, nrProd);
+        Thread t = new Thread(r);
+        t.start();
+        Thread.sleep(1000);
+
+/*        for(int i=1; i<=nrProd; i++)
         {
             str.addElement("Produsul " + i + ": " + p[i].toString());
-        }
+        }*/
         JList<String> list = new JList<>(str);
         list.setBounds(100,100, 850,750);
         f.add(list);
@@ -39,4 +47,6 @@ public class listareProduse extends adaugareInitiala{
         f.setSize(1200,800);
         f.setVisible(true);
     }
+
+
 }
