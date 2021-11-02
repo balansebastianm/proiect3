@@ -6,7 +6,7 @@ public class cos {
     private String categorieProdus;
     private float pretProdus;
     private int cantitateProdus;
-    private int nrCos = 0;
+    protected int nrCos = 0;
 
     public int getCodProdus() {
         return codProdus;
@@ -46,14 +46,6 @@ public class cos {
 
     public void setCantitateProdus(int cantitateProdus) {
         this.cantitateProdus = cantitateProdus;
-    }
-
-    public int getNrCos() {
-        return nrCos;
-    }
-
-    public void setNrCos(int nrCos) {
-        this.nrCos = nrCos;
     }
 
     @Override

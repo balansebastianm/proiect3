@@ -5,14 +5,15 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class afisareCos extends cos{
+public  class afisareCos extends cos{
     DefaultListModel<String> str = new DefaultListModel<>();
     JFrame f = new JFrame();
     JPanel panel = new JPanel();
     public void afisare(cos[] c){
-        for(int i=1; i<=getNrCos(); i++){
+        for(int i=0; i<=9999; i++){
+            if(c[i] == null)
+                break;
             str.addElement(c[i].toString());
-
         }
         JList<String> list = new JList<>(str);
         list.setBounds(100,100, 850,750);
