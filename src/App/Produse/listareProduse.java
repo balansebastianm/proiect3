@@ -22,7 +22,7 @@ public class listareProduse extends adaugareInitiala{
         Runnable r = new TlistareProduse(p, str, nrProd);
         Thread t = new Thread(r);
         t.start();
-        Thread.sleep(1000);
+
 
 /*        for(int i=1; i<=nrProd; i++)
         {
