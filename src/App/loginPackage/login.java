@@ -22,9 +22,9 @@ public class login {
     private JLabel user_label, password_label, message;
     private JTextField userName_text;
     private JPasswordField password_text;
-    private JButton submit, cancel;
+    private JButton submit;
     private JFrame frame;
-
+    CancelButton CancelButton;
     public void logare(){
         frame = new JFrame();
         //username
@@ -39,7 +39,7 @@ public class login {
 
         //validare
         submit = new JButton("Submit");
-        cancel = new JButton("Cancel");
+        CancelButton = new CancelButton("Cancel");
 
         panel = new JPanel(new GridLayout(4,2));
         panel.add(user_label);
@@ -50,7 +50,7 @@ public class login {
 
         message = new JLabel();
         panel.add(submit);
-        panel.add(cancel);
+        panel.add(CancelButton);
         panel.add(message);
 
 
@@ -60,7 +60,7 @@ public class login {
             public void actionPerformed(ActionEvent e) {
                 FileReader inputFile = null;
                 try {
-                    inputFile = new FileReader("C:\\Users\\Sebi\\IdeaProjects\\Proiect final\\src\\App\\loginPackage\\userdata.txt");
+                    inputFile = new FileReader("App/loginPackage/userdata.txt");
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
@@ -73,7 +73,6 @@ public class login {
                 {
                     String s = in.nextLine();
                     String[] sArray = s.split(",");
-
                     if (Objects.equals(userNameInput, sArray[0]) && passwordInput.equals(sArray[1]))
                     {
                         JOptionPane.showMessageDialog(null,
@@ -100,12 +99,6 @@ public class login {
             }
         });
 
-        cancel.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
         frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         frame.add(panel, BorderLayout.CENTER);
         frame.setTitle("Log in");
