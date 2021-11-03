@@ -1,16 +1,14 @@
 package App.Produse;
 
 import App.Interfaces.IadaugareProdus;
-import jdk.dynalink.StandardOperation;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class adaugareProdus implements IadaugareProdus {
 
@@ -47,29 +45,41 @@ public class adaugareProdus implements IadaugareProdus {
         buttonAdd.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int codProdus = Integer.parseInt(tfCodProdus.getText());
-                String numeProdus = tfNumeProdus.getText();
-                String categorieProdus = tfCategorieProdus.getText();
-                Float pretProdus = Float.parseFloat(tfPretProdus.getText());
-                int cantitateProdus = Integer.parseInt(tfCantitateProdus.getText());
                 try {
-                    BufferedWriter out = new BufferedWriter(
-                            new FileWriter("src\\App\\Produse\\listaProduse.txt", true));
-                    out.write("\n" + codProdus + "," + numeProdus + "," + categorieProdus + "," + pretProdus + "," + cantitateProdus);
-                    out.close();
-                } catch (IOException ex) {
-                    ex.printStackTrace();
+
+                    int codProdus = Integer.parseInt(tfCodProdus.getText());
+                    String numeProdus = tfNumeProdus.getText();
+                    String categorieProdus = tfCategorieProdus.getText();
+                    Float pretProdus = Float.parseFloat(tfPretProdus.getText());
+                    int cantitateProdus = Integer.parseInt(tfCantitateProdus.getText());
+                    adaugareInitiala ai = new adaugareInitiala();
+                    listareProduse l = new listareProduse();
+                    ai.lines = ai.lines+1;
+                    int n = l.nrProd;
+                    try {
+                        BufferedWriter out = new BufferedWriter(
+                                new FileWriter("src\\App\\Produse\\listaProduse.txt", true));
+                        out.write("\n" + codProdus + "," + numeProdus + "," + categorieProdus + "," + pretProdus + "," + cantitateProdus);
+                        out.close();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                    p[n] = new produseMagazin();
+                    p[n].setCodProdus(codProdus);
+                    p[n].setNumeProdus(numeProdus);
+                    p[n].setCategorieProdus(categorieProdus);
+                    p[n].setPretProdus(pretProdus);
+                    p[n].setCantitateProdus(cantitateProdus);
+                    JOptionPane.showMessageDialog(null, "Produs adaugat");
+                }catch (NumberFormatException nfe){
+                    JOptionPane j = new JOptionPane("Eroare", JOptionPane.ERROR_MESSAGE);
+                    JDialog dialog = j.createDialog("IMPOSIBIL");
+                    dialog.setAlwaysOnTop(true);
+                    dialog.setVisible(true);
                 }
-                adaugareInitiala ai = new adaugareInitiala();
-                listareProduse l = new listareProduse();
-                ai.lines = ai.lines+1;
-                int n = l.nrProd;
-                p[n] = new produseMagazin();
-                p[n].setCodProdus(codProdus);
-                p[n].setNumeProdus(numeProdus);
-                p[n].setCategorieProdus(categorieProdus);
-                p[n].setPretProdus(pretProdus);
-                p[n].setCantitateProdus(cantitateProdus);
+
+
+
             }
         });
 
