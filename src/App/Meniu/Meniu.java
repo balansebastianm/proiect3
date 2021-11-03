@@ -49,7 +49,11 @@ public class Meniu extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 listareProduse l = new listareProduse();
-                l.listare(p);
+                try {
+                    l.listare(p);
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                }
             }
         });
         button4.addActionListener(new ActionListener() {
