@@ -54,7 +54,7 @@ public class adaugareProdus implements IadaugareProdus {
                 int cantitateProdus = Integer.parseInt(tfCantitateProdus.getText());
                 try {
                     BufferedWriter out = new BufferedWriter(
-                            new FileWriter("C:\\Users\\Sebi\\IdeaProjects\\Proiect final\\src\\App\\Produse\\listaProduse.txt", true));
+                            new FileWriter("src\\App\\Produse\\listaProduse.txt", true));
                     out.write("\n" + codProdus + "," + numeProdus + "," + categorieProdus + "," + pretProdus + "," + cantitateProdus);
                     out.close();
                 } catch (IOException ex) {

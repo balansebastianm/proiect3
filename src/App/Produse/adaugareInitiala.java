@@ -15,7 +15,7 @@ public class adaugareInitiala implements IadaugareInitiala {
     private int i = 1;
     {
         try {
-            lines = Files.lines(Path.of("C:\\Users\\Sebi\\IdeaProjects\\Proiect final\\src\\App\\Produse\\listaProduse.txt")).count();
+            lines = Files.lines(Path.of("src\\App\\Produse\\listaProduse.txt")).count();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -26,7 +26,7 @@ public class adaugareInitiala implements IadaugareInitiala {
     {
         FileReader inputFile = null;
         try {
-            inputFile = new FileReader("C:\\Users\\Sebi\\IdeaProjects\\Proiect final\\src\\App\\Produse\\listaProduse.txt");
+            inputFile = new FileReader("src\\App\\Produse\\listaProduse.txt");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
